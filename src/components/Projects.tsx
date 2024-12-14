@@ -8,8 +8,8 @@ const Projects = () => {
       description: "A CICD pipeline automation service with 3 microservices for automated deployment",
       tech: ["TypeScript", "Node.js", "Express", "Cloudinary R2", "Redis"],
       links: {
-        github: "https://github.com/priyanshusaini1102",
-        demo: "#"
+        github: "https://github.com/priyanshusaini1102/vercel-clone",
+        demo: "https://vercel-clone-mauve.vercel.app/"
       }
     },
     {
@@ -17,8 +17,8 @@ const Projects = () => {
       description: "Full-featured social media platform with real-time messaging using Firebase",
       tech: ["Next.js", "Firebase", "Google Auth"],
       links: {
-        github: "https://github.com/priyanshusaini1102",
-        demo: "#"
+        github: "https://github.com/priyanshusaini1102/instagramm2.0",
+        demo: "https://instagramm2-0.vercel.app/"
       }
     },
     {
@@ -26,8 +26,8 @@ const Projects = () => {
       description: "Feature-rich online store with Stripe payment integration and product management",
       tech: ["MERN Stack", "Redux", "Stripe.js", "Cloudinary"],
       links: {
-        github: "https://github.com/priyanshusaini1102",
-        demo: "#"
+        github: "https://github.com/priyanshusaini1102/mernStore-frontend",
+        demo: "https://mern-store-frontend-sandy.vercel.app/"
       }
     }
   ];
