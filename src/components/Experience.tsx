@@ -5,8 +5,8 @@ const Experience = () => {
   const experiences = [
     {
       company: "Datacultr",
-      position: "Full Stack Developer - I",
-      duration: "Current",
+      position: "Full Stack Developer - 1",
+      duration: "Apr 2024 - Current",
       description: [
         "Integrated PDF Signature feature for electronic contract signing",
         "Implemented Single Device Login functionality for enhanced security",
@@ -20,7 +20,7 @@ const Experience = () => {
     {
       company: "Internshala",
       position: "Associate Software Development Engineer",
-      duration: "Feb 2023 - Present",
+      duration: "Feb 2023 - Apr 2024",
       description: [
         "Led redesign of Placement Guarantee Course dashboard",
         "Created custom Entity Repository for optimized data fetching",
