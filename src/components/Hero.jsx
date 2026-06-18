@@ -30,7 +30,7 @@ export default function Hero() {
       >
         {/* Eyebrow */}
         <motion.div className="hero-eyebrow" variants={fadeUp}>
-          Full Stack Developer
+          Software Engineer 2
           <span className="pulse" />
           Available for work
         </motion.div>
