@@ -68,6 +68,14 @@ export default function Contact() {
               GitHub
             </a>
             <a className="contact-social" href="tel:+917017413590">Phone</a>
+            <a
+              className="contact-social"
+              href="https://drive.google.com/uc?export=download&id=18F9H0WjIZ6HrEohtHk7pIhflX11F7w1i"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume ↓
+            </a>
           </motion.div>
         </motion.div>
       </div>

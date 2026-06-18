@@ -7,6 +7,8 @@ const NAV_ITEMS = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const RESUME_URL = 'https://drive.google.com/uc?export=download&id=18F9H0WjIZ6HrEohtHk7pIhflX11F7w1i'
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -45,6 +47,16 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={RESUME_URL}
+              className="nav-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume ↓
+            </a>
+          </li>
           <li>
             <a
               href="#contact"

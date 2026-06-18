@@ -44,11 +44,21 @@ export default function Hero() {
 
         {/* Bottom row */}
         <motion.div className="hero-bottom" variants={fadeUp}>
-          <p className="hero-desc">
-            I build products from concept to deployment — crafting clean
-            interfaces, solid backends, and everything in between. Focused on
-            performance, clarity, and shipping things that matter.
-          </p>
+          <div>
+            <p className="hero-desc">
+              I build products from concept to deployment — crafting clean
+              interfaces, solid backends, and everything in between. Focused on
+              performance, clarity, and shipping things that matter.
+            </p>
+            <a
+              className="hero-resume-link"
+              href="https://drive.google.com/uc?export=download&id=18F9H0WjIZ6HrEohtHk7pIhflX11F7w1i"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ↓ Download Resume
+            </a>
+          </div>
 
           <div className="hero-scroll">
             <span>Scroll</span>
