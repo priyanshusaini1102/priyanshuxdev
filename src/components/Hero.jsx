@@ -52,7 +52,7 @@ export default function Hero() {
             </p>
             <a
               className="hero-resume-link"
-              href="https://drive.google.com/uc?export=download&id=18F9H0WjIZ6HrEohtHk7pIhflX11F7w1i"
+              href="https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830&utm_source=chatgpt.com"
               target="_blank"
               rel="noopener noreferrer"
             >
