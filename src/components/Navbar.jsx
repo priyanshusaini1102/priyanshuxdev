@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { label: 'Contact', href: '#contact' },
 ]
 
-const RESUME_URL = 'https://drive.google.com/uc?export=download&id=18F9H0WjIZ6HrEohtHk7pIhflX11F7w1i'
+const RESUME_URL = 'https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830&utm_source=chatgpt.com'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
