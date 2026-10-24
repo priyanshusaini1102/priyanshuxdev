@@ -2,7 +2,7 @@
   "name": "priyanshuxdev",
   "private": true,
   "version": "1.0.0",
-  "description": "Personal site for Priyanshu Saini. Vite + React, deployed from main.",
+  "description": "Consulting site for Priyanshu Saini. Vite + React, deployed from main.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,9 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.2.7",
-    "@fontsource/instrument-serif": "^5.2.8",
-    "@fontsource/outfit": "^5.2.8",
+    "@fontsource/bricolage-grotesque": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },

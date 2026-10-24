@@ -3,24 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <!-- seo -->
     <script>
       (function () {
-        var theme = "dark"
+        var theme = "light"
         try {
           var stored = localStorage.getItem("theme")
-          if (stored === "light" || stored === "dark") {
-            theme = stored
-          } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-            theme = "light"
-          }
+          if (stored === "light" || stored === "dark") theme = stored
+          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark"
         } catch (e) {}
         document.documentElement.setAttribute("data-theme", theme)
         var color = document.querySelector('meta[name="theme-color"]')
-        if (color) color.setAttribute("content", theme === "light" ? "#f6f3ec" : "#141311")
+        if (color) color.setAttribute("content", theme === "dark" ? "#080a0e" : "#eef1f4")
       })()
     </script>
   </head>

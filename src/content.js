@@ -1,296 +1,206 @@
 /**
- * Site content. Edit this file only.
- *
- * Instagram is a placeholder until you set `href` to your real profile URL.
- * Notes are markdown strings. Supported syntax:
- *   paragraphs, # ## ###, - lists, 1. lists, > quotes, ``` code fences,
- *   **bold**, *italic*, `code`, [label](https://...), and ---
- * Add a post to `writing.posts` (newest first). Set placeholder: false
- * once the note is real.
+ * All public copy lives in this file.
+ * Do not add client names, quotes, prices, or metrics that are not already true.
  */
 
 export const site = {
   name: "Priyanshu Saini",
-  role: "Backend engineer building with AI",
   url: "https://priyanshuxdev.vercel.app",
   email: "priyanshusaini1102@gmail.com",
-  phone: "+917017413590",
-  phoneDisplay: "+91 70174 13590",
-  resumeUrl:
-    "https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830",
-  location: "Budhana, Muzaffarnagar, Uttar Pradesh",
+  role: "Backend and AI systems",
   seo: {
-    title: "Priyanshu Saini — Backend engineer building with AI",
+    title: "Priyanshu Saini — Backend and AI systems",
     description:
-      "Priyanshu Saini is a Node.js backend engineer at Datacultr Fintech, building in public with vector search, models, and Rust.",
+      "Node.js backends, AI integrations, and semantic search for startups and businesses. 3+ years of production backend experience in fintech.",
     ogImage: "/og.png",
   },
   nav: [
-    { label: "Build", href: "#build" },
-    { label: "Exploring", href: "#exploring" },
-    { label: "Projects", href: "#projects" },
-    { label: "Notes", href: "#notes" },
-    { label: "Now", href: "#now" },
-    { label: "Story", href: "#story" },
-    { label: "Contact", href: "#contact" },
+    { label: "Services", href: "#services" },
+    { label: "Work", href: "#work" },
+    { label: "Process", href: "#process" },
+    { label: "Stack", href: "#stack" },
+    { label: "FAQ", href: "#faq" },
+  ],
+  socials: [
+    { label: "GitHub", href: "https://github.com/priyanshusaini1102" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/priyanshusaini1102/" },
   ],
   hero: {
-    kicker: "Node.js · Fintech · AI",
-    lines: ["Backend engineer", "building with AI."],
-    lede: "I write Node.js backends at Datacultr Fintech. About three years in — I started at Internshala and have been promoted twice. Alongside the job I am learning vector search, models, and Rust by building them.",
-    path: ["Budhana", "IMS Noida", "Graphic Era", "Internshala", "Datacultr", "AI"],
-    asideLabel: "On the bench",
-    aside: [
-      { label: "Day job", value: "Node.js at Datacultr Fintech" },
-      { label: "Studying", value: "Qdrant, models, Rust" },
-      { label: "Building", value: "A trading bot, in progress" },
+    kicker: "Consulting",
+    title: "Backend and AI systems for startups and businesses.",
+    lede: "I design and build Node.js backends, AI integrations, and semantic search that a team can run in production. Three-plus years of that work has been in fintech.",
+    primaryCta: "Start a project",
+    secondaryCta: "Selected work",
+    sheetLabel: "Engagement",
+    stamp: "Taking projects",
+    sheet: [
+      { label: "Focus", value: "APIs, retrieval, and automation" },
+      { label: "For", value: "Startups and operating businesses" },
+      { label: "Background", value: "3+ years of production backends in fintech" },
+      { label: "First step", value: "A short discovery, then a written scope" },
     ],
   },
-  build: {
-    index: "01",
-    title: "What I build",
-    lede: "Production backends first. AI work I can explain second.",
+  services: {
+    title: "Services",
+    lede: "Scoped systems. The work is the backend, the integration, and the path to something your team can operate.",
     items: [
       {
-        title: "Node.js backends",
-        text: "The day job is fintech. I build Node.js services that other people depend on: clear APIs, careful data, and code a teammate can change without a tour.",
+        title: "Backend API development",
+        text: "Node.js services with clear contracts: authentication, data, and the endpoints a product actually calls.",
       },
       {
-        title: "Retrieval",
-        text: "Vector search, practiced in the open. Chunking, embeddings, and Qdrant — on movie descriptions first, so I understand the pieces before I trust them.",
+        title: "AI integrations",
+        text: "Models placed next to a normal backend. Where they help, how they fail, and how the rest of the system stays in control.",
       },
       {
-        title: "The path to a URL",
-        text: "Small platforms I built to learn the whole path: a deploy system, and storefronts with a real frontend and a real backend.",
+        title: "RAG and semantic search",
+        text: "Chunking, embeddings, and vector databases such as Qdrant, so search can follow meaning rather than keywords alone.",
+      },
+      {
+        title: "Automation and bots",
+        text: "Work that should run without someone watching it. Queues, workers, and the connections between systems.",
+      },
+      {
+        title: "Fintech-grade backends",
+        text: "Production habits from fintech: careful data, permissions, and services other people depend on.",
+      },
+      {
+        title: "Performance and scaling",
+        text: "Find what is slow, then fix the API, the query, or the queue. I measure before I claim a result.",
       },
     ],
   },
-  exploring: {
-    index: "02",
-    title: "Exploring now",
-    lede: "What I am actually studying. No wall of certificates.",
-    items: [
+  process: {
+    title: "Process",
+    lede: "Four steps. You get a scope before the build, and a system you can run after it.",
+    steps: [
       {
-        title: "Vector search with Qdrant",
-        status: "Active",
-        text: "How chunking and embeddings change what a search can find. The lab is movies-vector-search.",
+        title: "Discover",
+        text: "What you are building, what already exists, and what done means.",
       },
       {
-        title: "AI models",
-        status: "Learning",
-        text: "Where a model belongs next to a normal backend, and where it does not.",
+        title: "Build",
+        text: "The risky path first: the data model, the integrations, and the API other work depends on.",
       },
       {
-        title: "Rust",
-        status: "Learning",
-        text: "A second language, closer to the metal, for systems I want to understand properly.",
+        title: "Ship",
+        text: "Deployed, documented enough to hand off, and runnable by someone who was not in the repo every day.",
       },
       {
-        title: "Trading bot",
-        status: "In progress",
-        text: "Being built. There is no public repository yet.",
+        title: "Support",
+        text: "Fixes and the next slice of scope, if you want them. Support after ship is agreed, not assumed.",
       },
     ],
   },
-  projects: {
-    index: "03",
-    title: "Selected projects",
-    lede: "Real repositories, AI work first. Copy tracks what is in the code.",
+  work: {
+    title: "Selected work",
+    lede: "Public repositories of systems I built. These are not client engagements, and they do not stand in for a logo wall.",
     items: [
       {
         title: "movies-vector-search",
-        featured: true,
-        text: "A Node.js lab for semantic search over movie descriptions. It chunks text three ways — fixed-size tokens, sentence-aware splits, and semantic splits — embeds with FastEmbed, and includes a Qdrant client pointed at a local collection. Study code, not a shipped product.",
-        tags: ["Node.js", "Qdrant", "FastEmbed", "Transformers"],
+        problem: "Keyword search misses what a description means.",
+        solution: "A Node.js lab that chunks movie descriptions three ways — fixed tokens, sentence-aware splits, and semantic splits — embeds them with FastEmbed, and connects to a local Qdrant collection.",
+        stack: ["Node.js", "Qdrant", "FastEmbed", "Transformers"],
         links: [
-          {
-            label: "Source",
-            href: "https://github.com/priyanshusaini1102/movies-vector-search",
-          },
+          { label: "Source", href: "https://github.com/priyanshusaini1102/movies-vector-search" },
         ],
       },
       {
         title: "vercel-clone",
-        text: "A small deploy system in TypeScript. An upload service clones a Git repo, stores the files in Cloudflare R2, and enqueues a job on Redis. A worker builds the project. A request handler serves the result. A React app sits in front.",
-        tags: ["TypeScript", "Node.js", "Redis", "Cloudflare R2", "React"],
+        problem: "A project in Git still has to become a URL.",
+        solution: "A TypeScript deploy system. One service clones a repository, stores the files in Cloudflare R2, and queues a job on Redis. A worker builds it. A handler serves the result. A React app sits in front.",
+        stack: ["TypeScript", "Node.js", "Redis", "Cloudflare R2", "React"],
         links: [
-          {
-            label: "Live",
-            href: "https://vercel-clone-mauve.vercel.app",
-          },
-          {
-            label: "Source",
-            href: "https://github.com/priyanshusaini1102/vercel-clone",
-          },
+          { label: "Live", href: "https://vercel-clone-mauve.vercel.app" },
+          { label: "Source", href: "https://github.com/priyanshusaini1102/vercel-clone" },
         ],
       },
       {
         title: "mernStore",
-        text: "An ecommerce store split across two repos. The Express and MongoDB backend covers users, products, orders, and Stripe payments. The React frontend is a separate app.",
-        tags: ["Node.js", "Express", "MongoDB", "React", "Stripe"],
+        problem: "An online store needs accounts, a catalog, orders, and payments.",
+        solution: "An Express and MongoDB API for users, products, orders, and Stripe payments, with a separate React storefront.",
+        stack: ["Node.js", "Express", "MongoDB", "React", "Stripe"],
         links: [
-          {
-            label: "Live",
-            href: "https://mern-store-frontend-sandy.vercel.app",
-          },
-          {
-            label: "Frontend",
-            href: "https://github.com/priyanshusaini1102/mernStore-frontend",
-          },
-          {
-            label: "Backend",
-            href: "https://github.com/priyanshusaini1102/mernStore-backend",
-          },
+          { label: "Live", href: "https://mern-store-frontend-sandy.vercel.app" },
+          { label: "Frontend", href: "https://github.com/priyanshusaini1102/mernStore-frontend" },
+          { label: "Backend", href: "https://github.com/priyanshusaini1102/mernStore-backend" },
         ],
       },
       {
         title: "nexstores",
-        text: "A Next.js storefront backed by Sanity, with product, about, and contact pages, styled with Tailwind.",
-        tags: ["Next.js", "Sanity", "Tailwind CSS"],
+        problem: "A storefront that editors should be able to change without a code deploy.",
+        solution: "A Next.js storefront backed by Sanity, with product, about, and contact pages.",
+        stack: ["Next.js", "Sanity", "Tailwind CSS"],
         links: [
-          {
-            label: "Live",
-            href: "https://nexstores.vercel.app",
-          },
-          {
-            label: "Source",
-            href: "https://github.com/priyanshusaini1102/nexstores",
-          },
+          { label: "Live", href: "https://nexstores.vercel.app" },
+          { label: "Source", href: "https://github.com/priyanshusaini1102/nexstores" },
         ],
       },
-      {
-        title: "Trading bot",
-        inProgress: true,
-        text: "In progress. I am building it alongside the vector-search and Rust work. Nothing is public yet, so there is no repository link.",
-        tags: ["In progress"],
-        links: [],
-      },
     ],
   },
-  writing: {
-    index: "04",
-    title: "Notes",
-    lede: "Building in public. Short notes on what I am learning and shipping. The first one is a placeholder.",
-    posts: [
-      {
-        slug: "a-log-not-a-resume",
-        title: "A log, not a resume",
-        date: "2026-10-24",
-        placeholder: true,
-        excerpt:
-          "Placeholder. This site is becoming a log of building with AI. The first real note is not written yet.",
-        body: `This note is a **placeholder**. Replace it in \`src/content.js\` when there is something real to say, and set \`placeholder\` to \`false\`.
-
-The old site was a resume. That was the wrong object. I want a record of learning in public: vector search with Qdrant, where models fit next to a Node.js backend, Rust, and a trading bot that is not ready to show.
-
-The first real post should be about something that broke, or something that shipped. This one only marks the spot.
-
----
-
-What I will not do here:
-
-- Invent metrics to sound further along than I am
-- Pretend a study repo is a product
-- Wait until the work is polished before writing the lesson`,
-      },
+  stack: {
+    title: "Stack",
+    lede: "Tools these systems were actually built with.",
+    groups: [
+      { label: "Backend", items: ["Node.js", "TypeScript", "Express"] },
+      { label: "Data", items: ["MongoDB", "Redis", "Qdrant"] },
+      { label: "AI", items: ["FastEmbed", "Transformers"] },
+      { label: "Web", items: ["React", "Next.js"] },
+      { label: "Platform", items: ["Cloudflare R2", "Stripe", "Sanity"] },
     ],
   },
-  now: {
-    index: "05",
-    title: "Now",
-    updated: "24 October 2026",
-    lede: "A snapshot of the current season. Change the date when it goes stale.",
+  faq: {
+    title: "FAQ",
+    lede: "Straight answers before you write.",
     items: [
-      "Working at Datacultr Fintech, writing Node.js backends.",
-      "Learning vector search with Qdrant, AI models, and Rust.",
-      "Building a trading bot. No public repo yet.",
-      "Writing lyrics, playing guitar, producing music, and training at the gym.",
-    ],
-  },
-  story: {
-    index: "06",
-    title: "The short version",
-    paragraphs: [
-      "Born in 2001 in Budhana, a small town in Muzaffarnagar, Uttar Pradesh. BCA from IMS Noida. MCA from Graphic Era University, Dehradun.",
-      "The path is short enough to say plainly: small town, then a fintech engineer, now building with AI.",
-      "I started at Internshala. I work at Datacultr Fintech. Two promotions in. Node.js is the base. Vector search, models, and Rust are the work on top of it.",
-    ],
-    drivesTitle: "What drives me",
-    drives: [
-      { title: "Gym", text: "Training is how I stay steady." },
-      { title: "Music", text: "Lyrics, guitar, and production." },
-      { title: "Intelligence", text: "Get sharper by building, not by collecting theory." },
-      { title: "Gratitude", text: "A small town can go a long way. I don't forget that." },
-    ],
-    facts: [
-      { label: "From", value: "Budhana, Muzaffarnagar, UP" },
-      { label: "Born", value: "2001" },
-      { label: "BCA", value: "IMS Noida" },
-      { label: "MCA", value: "Graphic Era University, Dehradun" },
-      { label: "Work", value: "Datacultr Fintech" },
-      { label: "Before that", value: "Internshala" },
+      {
+        q: "What do you build?",
+        a: "Node.js backends, AI integrations, retrieval with vector databases, and automation. The repositories in Selected work are the public evidence.",
+      },
+      {
+        q: "Who is this for?",
+        a: "Startups and businesses that need a backend or an AI system built properly, including teams that already have a product in production.",
+      },
+      {
+        q: "How does a project start?",
+        a: "With an email. I ask a few questions, then write a scope before any build.",
+      },
+      {
+        q: "Do you publish prices?",
+        a: "No. Price follows the scope. I do not quote a number before I understand the system.",
+      },
+      {
+        q: "Can you work in an existing codebase?",
+        a: "Yes. A lot of production work starts from a system that already runs.",
+      },
     ],
   },
   contact: {
-    index: "07",
-    title: "Contact",
-    lede: "Email is the best way in. If you are building backends, retrieval, or the tools around them, send a note.",
+    title: "Start a project",
+    lede: "Send a short note about the system you need. Email is the way in.",
+    submit: "Email this inquiry",
+    sent: "Your email app should open with this inquiry. If it does not, use the address above.",
+    fields: {
+      name: "Name",
+      email: "Email",
+      company: "Company",
+      companyHint: "Optional",
+      need: "What you need",
+      needPlaceholder: "Choose a starting point",
+      unsure: "Not sure yet",
+      message: "What should this system do?",
+    },
   },
-  socials: [
-    {
-      label: "GitHub",
-      href: "https://github.com/priyanshusaini1102",
-    },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/priyanshusaini1102/",
-    },
-    {
-      label: "Email",
-      href: "mailto:priyanshusaini1102@gmail.com",
-    },
-    {
-      label: "Phone",
-      text: "+91 70174 13590",
-      href: "tel:+917017413590",
-    },
-    {
-      label: "Resume",
-      href: "https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830",
-    },
-    {
-      label: "Instagram",
-      href: "",
-      placeholder: true,
-      note: "Placeholder — add your Instagram URL in src/content.js",
-    },
-  ],
-  footer: "Priyanshu Saini",
+  footer: "Backend and AI systems for startups and businesses.",
 }
 
 site.jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "ProfessionalService",
   name: site.name,
   url: site.url,
   email: site.email,
-  telephone: site.phone,
-  jobTitle: "Backend engineer",
   description: site.seo.description,
-  worksFor: {
-    "@type": "Organization",
-    name: "Datacultr",
-  },
-  homeLocation: {
-    "@type": "Place",
-    name: site.location,
-  },
-  alumniOf: [
-    { "@type": "EducationalOrganization", name: "IMS Noida" },
-    { "@type": "CollegeOrUniversity", name: "Graphic Era University, Dehradun" },
-  ],
-  knowsAbout: ["Node.js", "Vector search", "Qdrant", "Rust", "AI models"],
-  sameAs: site.socials
-    .filter((item) => item.href && (item.label === "GitHub" || item.label === "LinkedIn"))
-    .map((item) => item.href),
+  serviceType: site.services.items.map((item) => item.title),
+  sameAs: site.socials.map((item) => item.href),
 }

@@ -18,7 +18,7 @@ function seoFromContent() {
     <meta name="author" content="${escapeAttr(site.name)}" />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="${escapeAttr(site.url)}" />
-    <meta name="theme-color" content="#141311" />
+    <meta name="theme-color" content="#eef1f4" />
     <meta property="og:site_name" content="${escapeAttr(site.name)}" />
     <meta property="og:title" content="${escapeAttr(site.seo.title)}" />
     <meta property="og:description" content="${escapeAttr(site.seo.description)}" />

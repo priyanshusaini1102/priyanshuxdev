@@ -1,31 +1,28 @@
-import Header from "./components/Header.jsx"
-import Hero from "./components/Hero.jsx"
-import Build from "./components/Build.jsx"
-import Exploring from "./components/Exploring.jsx"
-import Projects from "./components/Projects.jsx"
-import Writing from "./components/Writing.jsx"
-import Now from "./components/Now.jsx"
-import Story from "./components/Story.jsx"
-import Contact from "./components/Contact.jsx"
-import Footer from "./components/Footer.jsx"
+import TopBar from "./components/TopBar.jsx"
+import Intro from "./components/Intro.jsx"
+import Services from "./components/Services.jsx"
+import Process from "./components/Process.jsx"
+import Work from "./components/Work.jsx"
+import Stack from "./components/Stack.jsx"
+import Questions from "./components/Questions.jsx"
+import Inquiry from "./components/Inquiry.jsx"
+import Colophon from "./components/Colophon.jsx"
 
 export default function App() {
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>
-      <p className="spine" aria-hidden="true">Priyanshu Saini — Backend engineer building with AI</p>
-      <Header />
+      <TopBar />
       <main id="content">
-        <Hero />
-        <Build />
-        <Exploring />
-        <Projects />
-        <Writing />
-        <Now />
-        <Story />
-        <Contact />
+        <Intro />
+        <Services />
+        <Process />
+        <Work />
+        <Stack />
+        <Questions />
+        <Inquiry />
       </main>
-      <Footer />
+      <Colophon />
     </>
   )
 }
