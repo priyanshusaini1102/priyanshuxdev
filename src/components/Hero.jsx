@@ -1,71 +1,51 @@
-import { motion } from 'framer-motion'
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
-  },
-}
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
-  },
-}
+import { site } from "../content.js"
+import ExternalLink from "./ExternalLink.jsx"
 
 export default function Hero() {
+  const email = site.socials.find((item) => item.label === "Email")
+  const github = site.socials.find((item) => item.label === "GitHub")
+  const linkedin = site.socials.find((item) => item.label === "LinkedIn")
+
   return (
-    <section className="hero" id="hero">
-      <motion.div
-        className="container"
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        {/* Eyebrow */}
-        <motion.div className="hero-eyebrow" variants={fadeUp}>
-          Software Engineer 2
-          <span className="pulse" />
-          Available for work
-        </motion.div>
-
-        {/* Name */}
-        <motion.h1 className="hero-name" variants={fadeUp}>
-          <span className="accent-letter">P</span>RIYANSHU
-          <br />
-          SAINI
-        </motion.h1>
-
-        {/* Bottom row */}
-        <motion.div className="hero-bottom" variants={fadeUp}>
-          <div>
-            <p className="hero-desc">
-              I build products from concept to deployment — crafting clean
-              interfaces, solid backends, and everything in between. Focused on
-              performance, clarity, and shipping things that matter.
-            </p>
-            <a
-              className="hero-resume-link"
-              href="https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830&utm_source=chatgpt.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ↓ Download Resume
-            </a>
+    <section className="hero" id="top" aria-labelledby="hero-title">
+      <div className="shell hero-grid">
+        <div>
+          <p className="kicker">{site.hero.kicker}</p>
+          <h1 id="hero-title" className="hero-title">
+            <span className="hero-name">{site.name}</span>
+            <span className="hero-line">{site.hero.lines[0]}</span>
+            <span className="hero-line">
+              <em className="mark">{site.hero.lines[1]}</em>
+            </span>
+          </h1>
+          <p className="lede">{site.hero.lede}</p>
+          <div className="hero-actions">
+            <ExternalLink className="button" href={email.href}>Email</ExternalLink>
+            <ExternalLink className="text-link" href={github.href}>GitHub</ExternalLink>
+            <ExternalLink className="text-link" href={linkedin.href}>LinkedIn</ExternalLink>
           </div>
+          <p className="path" aria-label="Path">
+            {site.hero.path.map((step, index) => (
+              <span key={step}>
+                {index > 0 ? <span className="path-arrow" aria-hidden="true">→</span> : null}
+                {step}
+              </span>
+            ))}
+          </p>
+        </div>
 
-          <div className="hero-scroll">
-            <span>Scroll</span>
-            <div className="hero-scroll-line" />
-          </div>
-        </motion.div>
-      </motion.div>
+        <aside className="bench" aria-label={site.hero.asideLabel}>
+          <p className="bench-label">{site.hero.asideLabel}</p>
+          <dl>
+            {site.hero.aside.map((row) => (
+              <div key={row.label}>
+                <dt>{row.label}</dt>
+                <dd>{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+      </div>
     </section>
   )
 }

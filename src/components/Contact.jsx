@@ -1,83 +1,36 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' }
-  }
-}
+import { site } from "../content.js"
+import ExternalLink from "./ExternalLink.jsx"
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-
+  const section = site.contact
   return (
-    <section className="contact" id="contact">
-      <div className="container">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-        >
-          <motion.h2 className="contact-heading" variants={itemVariants}>
-            Let's work
-            <br />
-            together<span className="accent">.</span>
-          </motion.h2>
-
-          <motion.p className="contact-sub" variants={itemVariants}>
-            I'm exploring new opportunities where I can contribute to ambitious
-            engineering teams. Whether it's a role, collaboration, or
-            conversation — I'd love to connect.
-          </motion.p>
-
-          <motion.a
-            className="contact-email"
-            href="mailto:priyanshusaini1102@gmail.com"
-            variants={itemVariants}
-          >
-            priyanshusaini1102@gmail.com →
-          </motion.a>
-
-          <motion.div className="contact-socials" variants={itemVariants}>
-            <a
-              className="contact-social"
-              href="https://www.linkedin.com/in/priyanshusaini1102/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              className="contact-social"
-              href="https://github.com/priyanshusaini1102"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <a className="contact-social" href="tel:+917017413590">Phone</a>
-            <a
-              className="contact-social"
-              href="https://drive.google.com/uc?export=download&id=1ebzqYwYDCxSEkoDjWGwmaMer1TNiB830&utm_source=chatgpt.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume ↓
-            </a>
-          </motion.div>
-        </motion.div>
+    <section className="section contact" id="contact" aria-labelledby="contact-title">
+      <div className="shell">
+        <header className="section-head">
+          <p className="index">{section.index}</p>
+          <div>
+            <h2 id="contact-title">{section.title}</h2>
+            <p className="lede">{section.lede}</p>
+          </div>
+        </header>
+        <p className="email-line">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+        <ul className="socials">
+          {site.socials.map((item) => (
+            <li key={item.label}>
+              {item.placeholder || !item.href ? (
+                <span className="social-placeholder">
+                  <span className="flag flag-quiet">Placeholder</span>
+                  <span>{item.label}</span>
+                  <span className="quiet">{item.note}</span>
+                </span>
+              ) : (
+                <ExternalLink href={item.href}>{item.text || item.label}</ExternalLink>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
