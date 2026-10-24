@@ -1,9 +1,11 @@
 import { site } from "../content.js"
+import { useReveal } from "../useReveal.js"
 
 export default function Stack() {
   const section = site.stack
+  const reveal = useReveal()
   return (
-    <section className="band band-tight" id="stack" aria-labelledby="stack-title">
+    <section className="band band-tight reveal" id="stack" aria-labelledby="stack-title" ref={reveal}>
       <div className="frame">
         <header className="band-head">
           <h2 id="stack-title">{section.title}</h2>

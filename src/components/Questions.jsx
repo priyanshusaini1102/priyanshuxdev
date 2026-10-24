@@ -1,13 +1,15 @@
 import { useId, useState } from "react"
 import { site } from "../content.js"
+import { useReveal } from "../useReveal.js"
 
 export default function Questions() {
   const section = site.faq
   const baseId = useId()
   const [open, setOpen] = useState(0)
+  const reveal = useReveal()
 
   return (
-    <section className="band" id="faq" aria-labelledby="faq-title">
+    <section className="band reveal" id="faq" aria-labelledby="faq-title" ref={reveal}>
       <div className="frame faq-layout">
         <header className="band-head">
           <h2 id="faq-title">{section.title}</h2>

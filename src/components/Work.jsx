@@ -1,10 +1,13 @@
 import { site } from "../content.js"
+import { trackPointer } from "../trackPointer.js"
+import { useReveal } from "../useReveal.js"
 import Outbound from "./Outbound.jsx"
 
 export default function Work() {
   const section = site.work
+  const reveal = useReveal()
   return (
-    <section className="band" id="work" aria-labelledby="work-title">
+    <section className="band reveal" id="work" aria-labelledby="work-title" ref={reveal}>
       <div className="frame">
         <header className="band-head">
           <h2 id="work-title">{section.title}</h2>
@@ -12,7 +15,7 @@ export default function Work() {
         </header>
         <ul className="work-grid">
           {section.items.map((item) => (
-            <li key={item.title} className="case">
+            <li key={item.title} className="case" onPointerMove={trackPointer}>
               <h3>{item.title}</h3>
               <p className="case-label">Problem</p>
               <p>{item.problem}</p>

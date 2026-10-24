@@ -1,3 +1,4 @@
+import Atmosphere from "./components/Atmosphere.jsx"
 import TopBar from "./components/TopBar.jsx"
 import Intro from "./components/Intro.jsx"
 import Services from "./components/Services.jsx"
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>
+      <Atmosphere />
       <TopBar />
       <main id="content">
         <Intro />

@@ -21,20 +21,45 @@ export default function TopBar() {
   const firstLinkRef = useRef(null)
 
   useEffect(() => {
-    const nodes = site.nav
-      .map((item) => document.querySelector(item.href))
-      .filter(Boolean)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const hit = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (hit) setCurrent(`#${hit.target.id}`)
-      },
-      { rootMargin: "-45% 0px -45% 0px", threshold: [0.15, 0.4] },
-    )
-    nodes.forEach((node) => observer.observe(node))
-    return () => observer.disconnect()
+    const ids = site.nav.map((item) => item.href.slice(1))
+    let frame = 0
+
+    const update = () => {
+      frame = 0
+      const bar = document.querySelector(".topbar")?.getBoundingClientRect().height ?? 72
+      // Just under the sticky bar, past the scroll-padding landing point.
+      // Sort by document position: Process sits above Work, but later in the nav.
+      const line = window.scrollY + bar + 32
+      const sections = ids
+        .map((id) => {
+          const section = document.getElementById(id)
+          if (!section) return null
+          return { href: `#${id}`, top: section.getBoundingClientRect().top + window.scrollY }
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.top - b.top)
+      let active = ""
+      for (const section of sections) {
+        if (section.top <= line) active = section.href
+      }
+      setCurrent((previous) => (previous === active ? previous : active))
+    }
+
+    const requestUpdate = () => {
+      if (frame) return
+      frame = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener("scroll", requestUpdate, { passive: true })
+    window.addEventListener("resize", requestUpdate)
+    window.addEventListener("hashchange", requestUpdate)
+    return () => {
+      window.removeEventListener("scroll", requestUpdate)
+      window.removeEventListener("resize", requestUpdate)
+      window.removeEventListener("hashchange", requestUpdate)
+      if (frame) cancelAnimationFrame(frame)
+    }
   }, [])
 
   useEffect(() => {

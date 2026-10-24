@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { site } from "../content.js"
+import { useReveal } from "../useReveal.js"
 import Outbound from "./Outbound.jsx"
 
 export default function Inquiry() {
   const section = site.contact
   const [notice, setNotice] = useState("")
+  const reveal = useReveal()
 
   const onSubmit = (event) => {
     event.preventDefault()
@@ -31,7 +33,7 @@ export default function Inquiry() {
   }
 
   return (
-    <section className="band contact-band" id="contact" aria-labelledby="contact-title">
+    <section className="band contact-band reveal" id="contact" aria-labelledby="contact-title" ref={reveal}>
       <div className="frame contact-grid">
         <div>
           <h2 id="contact-title">{section.title}</h2>

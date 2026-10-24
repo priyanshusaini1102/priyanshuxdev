@@ -7,11 +7,11 @@ export const site = {
   name: "Priyanshu Saini",
   url: "https://priyanshuxdev.vercel.app",
   email: "priyanshusaini1102@gmail.com",
-  role: "Backend and AI systems",
+  role: "Apps, backends, and AI",
   seo: {
-    title: "Priyanshu Saini — Backend and AI systems",
+    title: "Priyanshu Saini — Apps, backends, and AI",
     description:
-      "Node.js backends, AI integrations, and semantic search for startups and businesses. 3+ years of production backend experience in fintech.",
+      "Web apps, mobile apps, and Node.js backends for startups and businesses. AI and semantic search included. 3+ years in fintech production.",
     ogImage: "/og.png",
   },
   nav: [
@@ -27,14 +27,14 @@ export const site = {
   ],
   hero: {
     kicker: "Consulting",
-    title: "Backend and AI systems for startups and businesses.",
-    lede: "I design and build Node.js backends, AI integrations, and semantic search that a team can run in production. Three-plus years of that work has been in fintech.",
+    title: "Web apps, mobile apps, and the backends behind them.",
+    lede: "I build React and Next.js web apps, React Native mobile apps, and Node.js APIs. AI is part of the work: integrations and semantic search with Qdrant. Three-plus years of the production backend work has been in fintech.",
     primaryCta: "Start a project",
     secondaryCta: "Selected work",
     sheetLabel: "Engagement",
     stamp: "Taking projects",
     sheet: [
-      { label: "Focus", value: "APIs, retrieval, and automation" },
+      { label: "Focus", value: "Apps, APIs, and AI systems" },
       { label: "For", value: "Startups and operating businesses" },
       { label: "Background", value: "3+ years of production backends in fintech" },
       { label: "First step", value: "A short discovery, then a written scope" },
@@ -42,15 +42,23 @@ export const site = {
   },
   services: {
     title: "Services",
-    lede: "Scoped systems. The work is the backend, the integration, and the path to something your team can operate.",
+    lede: "From the screen to the API. AI is a strength inside that work, not a separate pitch.",
     items: [
       {
-        title: "Backend API development",
-        text: "Node.js services with clear contracts: authentication, data, and the endpoints a product actually calls.",
+        title: "Web apps",
+        text: "React and Next.js applications: the screens people use, connected to a backend that can actually run.",
+      },
+      {
+        title: "Mobile apps",
+        text: "React Native apps. The public food-order app is one example of that work.",
+      },
+      {
+        title: "Backend APIs",
+        text: "Node.js services with clear contracts: authentication, data, and the endpoints an app actually calls.",
       },
       {
         title: "AI integrations",
-        text: "Models placed next to a normal backend. Where they help, how they fail, and how the rest of the system stays in control.",
+        text: "Models placed next to a normal app and API. Where they help, how they fail, and how the rest of the system stays in control.",
       },
       {
         title: "RAG and semantic search",
@@ -59,14 +67,6 @@ export const site = {
       {
         title: "Automation and bots",
         text: "Work that should run without someone watching it. Queues, workers, and the connections between systems.",
-      },
-      {
-        title: "Fintech-grade backends",
-        text: "Production habits from fintech: careful data, permissions, and services other people depend on.",
-      },
-      {
-        title: "Performance and scaling",
-        text: "Find what is slow, then fix the API, the query, or the queue. I measure before I claim a result.",
       },
     ],
   },
@@ -80,7 +80,7 @@ export const site = {
       },
       {
         title: "Build",
-        text: "The risky path first: the data model, the integrations, and the API other work depends on.",
+        text: "The risky path first: the app flow, the data model, and the API the rest of the product depends on.",
       },
       {
         title: "Ship",
@@ -146,6 +146,7 @@ export const site = {
       { label: "Data", items: ["MongoDB", "Redis", "Qdrant"] },
       { label: "AI", items: ["FastEmbed", "Transformers"] },
       { label: "Web", items: ["React", "Next.js"] },
+      { label: "Mobile", items: ["React Native"] },
       { label: "Platform", items: ["Cloudflare R2", "Stripe", "Sanity"] },
     ],
   },
@@ -155,11 +156,11 @@ export const site = {
     items: [
       {
         q: "What do you build?",
-        a: "Node.js backends, AI integrations, retrieval with vector databases, and automation. The repositories in Selected work are the public evidence.",
+        a: "Web apps in React and Next.js, mobile apps in React Native, Node.js backends, and AI systems such as retrieval with Qdrant. Selected work and the public food-order app are the evidence.",
       },
       {
         q: "Who is this for?",
-        a: "Startups and businesses that need a backend or an AI system built properly, including teams that already have a product in production.",
+        a: "Startups and businesses that need an app, a backend, or both, including teams that already have a product in production.",
       },
       {
         q: "How does a project start?",
@@ -191,7 +192,7 @@ export const site = {
       message: "What should this system do?",
     },
   },
-  footer: "Backend and AI systems for startups and businesses.",
+  footer: "Web apps, mobile apps, and backends for startups and businesses.",
 }
 
 site.jsonLd = {

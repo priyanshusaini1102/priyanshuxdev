@@ -39,6 +39,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--bar) + 0.75rem);
 }
 
 body {
@@ -128,6 +129,32 @@ button {
 
 .skip:focus {
   transform: none;
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    520px circle at var(--glow-x, 78%) var(--glow-y, 8%),
+    rgb(200 16 16 / 14%),
+    transparent 68%
+  );
+}
+
+:root[data-theme="dark"] .atmosphere {
+  background: radial-gradient(
+    560px circle at var(--glow-x, 78%) var(--glow-y, 8%),
+    rgb(200 16 16 / 24%),
+    transparent 70%
+  );
+}
+
+main,
+.colophon {
+  position: relative;
+  z-index: 1;
 }
 
 .frame {
@@ -229,9 +256,13 @@ button {
   text-decoration: none;
   color: var(--muted);
   border-radius: 999px;
+  transition: color 160ms ease, background 160ms ease;
 }
 
-.menu a:not(.button):hover,
+.menu a:not(.button):hover {
+  color: var(--ink);
+}
+
 .menu a[aria-current="true"] {
   color: var(--ink);
   background: var(--paper);
@@ -339,6 +370,8 @@ button {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1.25rem 1.3rem 0.4rem;
+  animation: rise 0.8s ease 0.12s both;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .sheet-head {
@@ -422,6 +455,7 @@ button {
 
 .service-grid li,
 .case {
+  position: relative;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -429,11 +463,44 @@ button {
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.service-grid li::after,
+.case::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--px, 50%) var(--py, 0%),
+    rgb(200 16 16 / 13%),
+    transparent 46%
+  );
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.service-grid li > *,
+.case > * {
+  position: relative;
+  z-index: 1;
+}
+
 .service-grid li:hover,
 .case:hover {
   transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
   box-shadow: var(--shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sheet:hover {
+    transform: translateY(-4px);
+  }
+
+  .service-grid li:hover::after,
+  .case:hover::after {
+    opacity: 1;
+  }
 }
 
 .service-grid h3,
@@ -844,6 +911,23 @@ button {
     padding: 3.2rem 0;
   }
 }
+
+html.motion .reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+html.motion .reveal:not(.is-in) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+html.motion .reveal.is-in .steps li {
+  animation: rise 0.55s ease both;
+}
+
+html.motion .reveal.is-in .steps li:nth-child(2) { animation-delay: 0.07s; }
+html.motion .reveal.is-in .steps li:nth-child(3) { animation-delay: 0.14s; }
+html.motion .reveal.is-in .steps li:nth-child(4) { animation-delay: 0.21s; }
 
 @media (prefers-reduced-motion: reduce) {
   html {
