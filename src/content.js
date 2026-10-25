@@ -9,7 +9,7 @@ export const site = {
   email: "priyanshusaini1102@gmail.com",
   role: "Apps, backends, and AI",
   seo: {
-    title: "Priyanshu Saini — Apps, backends, and AI",
+    title: "Priyanshu Saini — AI-powered apps and backends",
     description:
       "Web apps, mobile apps, and Node.js backends for startups and businesses. AI and semantic search included. 3+ years in fintech production.",
     ogImage: "/og.png",
@@ -27,7 +27,7 @@ export const site = {
   ],
   hero: {
     kicker: "Consulting",
-    title: "Web apps, mobile apps, and the backends behind them.",
+    title: "AI-powered apps and backends.",
     lede: "I build React and Next.js web apps, React Native mobile apps, and Node.js APIs. AI is part of the work: integrations and semantic search with Qdrant. Three-plus years of the production backend work has been in fintech.",
     primaryCta: "Start a project",
     secondaryCta: "Selected work",

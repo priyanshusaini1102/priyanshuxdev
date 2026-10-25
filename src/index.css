@@ -201,10 +201,32 @@ main,
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 80;
   background: color-mix(in srgb, var(--bg) 86%, transparent);
-  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
+}
+
+/* Blur lives on a pseudo-element. backdrop-filter on the bar itself is a
+   containing block for position:fixed, which trapped the mobile menu. */
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  backdrop-filter: blur(16px);
+}
+
+.topbar.is-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+}
+
+.topbar.is-open::before {
+  display: none;
 }
 
 .topbar-inner {
@@ -298,11 +320,26 @@ main,
   margin-left: auto;
 }
 
-.scrim {
+.menu-layer {
   position: fixed;
   inset: 0;
-  z-index: 30;
-  background: rgb(8 10 14 / 45%);
+  z-index: 70;
+  background-color: var(--bg);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background-color: var(--bg);
+}
+
+html.menu-lock,
+html.menu-lock body {
+  overscroll-behavior: none;
 }
 
 .intro {
@@ -831,23 +868,26 @@ main,
 
   .menu {
     display: none;
-    position: fixed;
-    z-index: 45;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(22rem, 88vw);
-    margin: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding: 5.2rem 1.25rem 1.5rem;
-    background: var(--paper);
-    border-left: 1px solid var(--line);
   }
 
   .menu.open {
+    position: absolute;
+    z-index: 1;
+    top: var(--menu-top, var(--bar));
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    width: auto;
+    margin: 0;
+    padding: 0.75rem 1.25rem 1.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: var(--bg);
+    border-left: 0;
   }
 
   .menu ul {
