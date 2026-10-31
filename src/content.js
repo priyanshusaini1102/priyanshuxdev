@@ -94,8 +94,23 @@ export const site = {
   },
   work: {
     title: "Selected work",
-    lede: "Public repositories of systems I built. These are not client engagements, and they do not stand in for a logo wall.",
+    lede: "Systems I built and run. These are not client engagements, and they do not stand in for a logo wall.",
     items: [
+      {
+        title: "Nukkad",
+        featured: true,
+        image: {
+          src: "/nukkad.webp",
+          alt: "Nukkad graphic: the Devanagari wordmark नुक्कड़ beside a phone where a customer orders ghee and sugar in Hinglish through ChatGPT, and a Telegram order alert with Accept and Reject buttons for the shopkeeper.",
+        },
+        problem: "Corner shops in tier-3 Indian cities have no simple way to take orders online, and their customers will not install another app.",
+        solution: "An MCP server that turns ChatGPT or Claude into the storefront. Shopkeepers list items and customers order in Hindi, Hinglish, or English, inside their own city. Sign-in is OAuth 2.1 with PKCE and Google, the shop confirms new numbers with a call, and every order reaches the shop on Telegram with Accept and Reject buttons.",
+        stack: ["TypeScript", "Node.js", "MCP", "OAuth 2.1", "Prisma", "Neon Postgres", "Telegram Bot API", "Render"],
+        links: [
+          { label: "Live", href: "https://nukkad.priyanshusaini.in" },
+          { label: "Connect guide", href: "https://nukkad.priyanshusaini.in/guide/" },
+        ],
+      },
       {
         title: "movies-vector-search",
         problem: "Keyword search misses what a description means.",

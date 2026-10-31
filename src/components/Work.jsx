@@ -15,7 +15,17 @@ export default function Work() {
         </header>
         <ul className="work-grid">
           {section.items.map((item) => (
-            <li key={item.title} className="case" onPointerMove={trackPointer}>
+            <li
+              key={item.title}
+              className={item.featured ? "case case-featured" : "case"}
+              onPointerMove={trackPointer}
+            >
+              {item.image && (
+                <figure className="case-media">
+                  <img src={item.image.src} alt={item.image.alt} width="1600" height="900" loading="lazy" decoding="async" />
+                </figure>
+              )}
+              <div className="case-body">
               <h3>{item.title}</h3>
               <p className="case-label">Problem</p>
               <p>{item.problem}</p>
@@ -33,6 +43,7 @@ export default function Work() {
                   </li>
                 ))}
               </ul>
+              </div>
             </li>
           ))}
         </ul>
