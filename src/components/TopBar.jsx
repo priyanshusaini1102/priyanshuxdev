@@ -1,6 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { site } from "../content.js"
+import ResumeLink from "./ResumeLink.jsx"
 
 function readTheme() {
   return document.documentElement.dataset.theme === "dark" ? "dark" : "light"
@@ -196,6 +197,7 @@ export default function TopBar() {
       <a className="button button-small menu-cta" href="#contact" onClick={followLink}>
         {site.hero.primaryCta}
       </a>
+      <ResumeLink variant="small" className="menu-resume" onClick={open ? followLink : undefined} />
     </nav>
   )
 
@@ -226,6 +228,7 @@ export default function TopBar() {
               {theme === "dark" ? "Light" : "Dark"}
               <span className="sr-only"> appearance</span>
             </button>
+            <ResumeLink variant="small" className="desk-resume" />
             <a className="button button-small desk-cta" href="#contact">
               {site.hero.primaryCta}
             </a>
