@@ -25,6 +25,12 @@ export const site = {
     { label: "GitHub", href: "https://github.com/priyanshusaini1102" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/priyanshusaini1102/" },
   ],
+  // public/resume.pdf — served at /resume.pdf
+  resume: {
+    label: "Download resume",
+    href: "/resume.pdf",
+    fileName: "Priyanshu-Saini-Resume.pdf",
+  },
   hero: {
     kicker: "Consulting",
     title: "AI-powered apps and backends.",

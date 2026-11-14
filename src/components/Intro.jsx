@@ -1,4 +1,5 @@
 import { site } from "../content.js"
+import ResumeLink from "./ResumeLink.jsx"
 
 export default function Intro() {
   const { hero } = site
@@ -12,6 +13,7 @@ export default function Intro() {
           <div className="intro-actions">
             <a className="button" href="#contact">{hero.primaryCta}</a>
             <a className="button button-ghost" href="#work">{hero.secondaryCta}</a>
+            <ResumeLink withView />
           </div>
         </div>
 

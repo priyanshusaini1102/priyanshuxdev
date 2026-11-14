@@ -2,6 +2,7 @@ import { useState } from "react"
 import { site } from "../content.js"
 import { useReveal } from "../useReveal.js"
 import Outbound from "./Outbound.jsx"
+import ResumeLink from "./ResumeLink.jsx"
 
 export default function Inquiry() {
   const section = site.contact
@@ -48,6 +49,7 @@ export default function Inquiry() {
               </li>
             ))}
           </ul>
+          <ResumeLink withView className="contact-resume" />
         </div>
 
         <form className="inquiry" onSubmit={onSubmit} noValidate={false}>
