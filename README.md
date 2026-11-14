@@ -9,4 +9,7 @@ npm run dev
 npm run build
 npm run preview
 npm run lint
+npm test
 ```
+
+Resume editing is documented in [ADMIN.md](ADMIN.md).

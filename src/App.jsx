@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react"
 import Atmosphere from "./components/Atmosphere.jsx"
 import TopBar from "./components/TopBar.jsx"
 import Intro from "./components/Intro.jsx"
@@ -9,7 +10,22 @@ import Questions from "./components/Questions.jsx"
 import Inquiry from "./components/Inquiry.jsx"
 import Colophon from "./components/Colophon.jsx"
 
+const AdminApp = lazy(() => import("./admin/AdminApp.jsx"))
+
+function isAdminRoute() {
+  const path = window.location.pathname.replace(/\/+$/, "") || "/"
+  return path === "/admin"
+}
+
 export default function App() {
+  if (isAdminRoute()) {
+    return (
+      <Suspense fallback={null}>
+        <AdminApp />
+      </Suspense>
+    )
+  }
+
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>

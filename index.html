@@ -9,6 +9,22 @@
     <!-- seo -->
     <script>
       (function () {
+        var path = location.pathname.replace(/\/+$/, "") || "/"
+        if (path !== "/admin") return
+        var robots = document.querySelector('meta[name="robots"]')
+        if (!robots) {
+          robots = document.createElement("meta")
+          robots.setAttribute("name", "robots")
+          document.head.appendChild(robots)
+        }
+        robots.setAttribute("content", "noindex, nofollow")
+        var canonical = document.querySelector('link[rel="canonical"]')
+        if (canonical) canonical.remove()
+        document.title = "Resume admin"
+      })()
+    </script>
+    <script>
+      (function () {
         var theme = "light"
         try {
           var stored = localStorage.getItem("theme")

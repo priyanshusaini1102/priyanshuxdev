@@ -1,0 +1,149 @@
+{
+  "name": "Priyanshu Saini",
+  "contact": [
+    {
+      "label": "+91 7017413590",
+      "href": ""
+    },
+    {
+      "label": "priyanshusaini1102@gmail.com",
+      "href": "mailto:priyanshusaini1102@gmail.com"
+    },
+    {
+      "label": "linkedin.com/in/priyanshusaini",
+      "href": "https://www.linkedin.com/in/priyanshusaini"
+    },
+    {
+      "label": "github.com/priyanshusaini1102",
+      "href": "https://github.com/priyanshusaini1102"
+    },
+    {
+      "label": "priyanshuxdev.vercel.app",
+      "href": "https://priyanshuxdev.vercel.app"
+    }
+  ],
+  "summary": "Sr. Software Engineer at Datacultr (fintech) with 3.5+ years building Node.js/TypeScript backends, React/Next.js web apps and React Native apps. Builds AI-native products: created Nukkad, an MCP server for ordering and running a shop by chatting in Hindi/Hinglish inside ChatGPT or Claude, plus an LLM tool-calling web chat (Gemini). Hands-on with Qdrant vector search and embeddings.",
+  "skills": [
+    {
+      "label": "AI & LLM",
+      "items": "MCP (Model Context Protocol) servers & tools, MCP OAuth, LLM tool calling (Gemini API), ChatGPT Apps, Qdrant vector search, embeddings (FastEmbed, Transformers.js), text chunking (LangChain text splitters)"
+    },
+    {
+      "label": "Languages",
+      "items": "JavaScript, TypeScript, PHP, SQL, HTML, CSS"
+    },
+    {
+      "label": "Backend & Databases",
+      "items": "Node.js, Express.js, REST APIs, GraphQL, Prisma, Zod, MongoDB, PostgreSQL, MySQL, Redis, CodeIgniter"
+    },
+    {
+      "label": "Frontend & Mobile",
+      "items": "React, Next.js, Angular, React Native, Expo, Redux, Zustand, Tailwind CSS, jQuery"
+    },
+    {
+      "label": "DevOps & Tools",
+      "items": "Docker, AWS (S3, Translate), Render, Neon, GitHub Actions, Firebase, Sentry, Vitest, Nginx, PM2, Git, Jira"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Datacultr",
+      "dates": "Apr 2024 – Present",
+      "location": "Gurugram, India",
+      "roles": [
+        {
+          "title": "Sr. Software Engineer 1",
+          "dates": "Aug 2026 – Present",
+          "bullets": [
+            "Built CV3's PIN Release flow (Angular 16): device lookup, eligibility checks and 7-digit offline release PINs for phones and Wi-Fi tablets, with PINs held in memory only and cleared after 5 min idle.",
+            "Retired 47 unused SMF V1 endpoints in the Node.js service and documented the live V2 API surface for QA load-test and E2E automation, reducing the legacy attack surface.",
+            "Built SMF payment audit and reporting APIs with CSV/email export, INR/USD conversion and mismatch detection; fixed totals to count only captured, credited payments.",
+            "Hardened CV3 security: Bearer-auth on Swagger, removed tokens from URLs and exposed endpoints, fixed 12 VAPT findings.",
+            "Restored ServiceDesk email delivery the same day after a Sentry-flagged production SMTP failure."
+          ]
+        },
+        {
+          "title": "Software Engineer II (SDE-2)",
+          "dates": "Jul 2025 – Jul 2026",
+          "bullets": [
+            "Promoted to SDE-2; owned 9 production projects (4 backend services, 1 React Native app, 4 frontend dashboards).",
+            "Extended the CV3 device-management platform to Air Conditioners and Laptops; set up the new CV3 React (Vite) app with TanStack Query and permission-aware navigation, embedded in the Angular dashboard.",
+            "Delivered SMF V2.0 self-serve commerce: package purchase, Razorpay (India) and Stripe (Pakistan) webhooks with signature validation and duplicate-event protection, licence pools and reseller distribution.",
+            "Designed ServiceDesk V2's sub-permission and proxy-permission system with permission-check middleware, and fixed 95+ GitHub security alerts plus VAPT findings in ServiceDesk.",
+            "Added Indonesian and Sinhala (AWS Translate, Google Translate fallback) plus Swahili and Portuguese in the SMF Retailer App."
+          ]
+        },
+        {
+          "title": "Full Stack Developer",
+          "dates": "Apr 2024 – Jun 2025",
+          "bullets": [
+            "Owned end-to-end development of the SMF Pilot React Native app (live on Google Play): IMEI barcode scanning, 5 microservice integrations, Razorpay & Stripe payments, Firebase push notifications, deep linking.",
+            "Built the unified Nucleus admin platform (CodeIgniter/PHP), integrating 40+ CRUD APIs across CV3, UAS, DEM and Firebase notification services with role-based access.",
+            "Built Node.js APIs: cv2 search for 7 device models, Firebase notifications service, UAS OAuth2 token, MQTT publish.",
+            "Built a shared Node.js email microservice on Pub/Sub queues, Docker-deployed across all company dashboards, centralizing notifications and cutting per-project email integration effort by 80%.",
+            "Remediated 25 GitHub Advanced Security alerts (exposed secrets, XSS, SSRF, query injection, path traversal) and VAPT findings across Nucleus, SMF and ServiceDesk."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Internshala",
+      "dates": "Feb 2023 – Apr 2024",
+      "location": "Gurugram, India",
+      "roles": [
+        {
+          "title": "Associate Software Development Engineer",
+          "dates": "Aug 2023 – Apr 2024",
+          "bullets": [
+            "Led the redesign of the Placement Guarantee Course student dashboard, improving navigation and data visibility for 50K+ learners.",
+            "Built custom PHP Doctrine repositories to optimize API payloads, cutting response sizes by 40%."
+          ]
+        },
+        {
+          "title": "Software Development Engineer Intern",
+          "dates": "Feb 2023 – Aug 2023",
+          "bullets": [
+            "Revamped two core student-facing modules with a structured component architecture, reducing reported UI bugs by 30%."
+          ]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Nukkad: AI-native hyperlocal commerce for tier-3 India",
+      "linkLabel": "nukkad.priyanshusaini.in",
+      "href": "https://nukkad.priyanshusaini.in",
+      "stack": "TypeScript, Node.js, Express, MCP SDK, Prisma, PostgreSQL (Neon), Zod, Vitest, Render, Telegram Bot API, Gemini API",
+      "bullets": [
+        "Built an MCP server that lets customers and kirana shopkeepers in towns like Muzaffarnagar, Roorkee and Shamli order and run a shop by chatting in Hindi/Hinglish inside ChatGPT, Claude or Cursor, with no app to install.",
+        "Designed role-scoped toolsets (customer, shopkeeper, admin) with business rules enforced in domain services, not prompts: same-city ordering, stock tracking, custom orders, delivery-code order lifecycle and cash-on-delivery.",
+        "Added phone-OTP signup, Google sign-in via MCP OAuth discovery, Telegram order alerts with Accept/Reject buttons, and a web chat where a Gemini model drives the same tools for users without an AI assistant.",
+        "Deployed on Render + Neon with Prisma migrations and a Vitest suite in GitHub Actions; submitted to ChatGPT app review."
+      ]
+    },
+    {
+      "name": "Movie Semantic Search",
+      "linkLabel": "github.com/priyanshusaini1102/movies-vector-search",
+      "href": "https://github.com/priyanshusaini1102/movies-vector-search",
+      "stack": "Node.js, Qdrant, FastEmbed, Transformers.js, LangChain text splitters",
+      "bullets": [
+        "Embedded movie descriptions with FastEmbed and indexed them in Qdrant with metadata payloads, comparing fixed-size token, sentence-aware (with overlap) and embedding-based semantic chunking."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Graphic Era University",
+      "degree": "Master of Computer Applications (MCA)",
+      "dates": "2021 – 2023",
+      "location": "Dehradun, India"
+    },
+    {
+      "school": "IMS Noida",
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "dates": "2018 – 2021",
+      "location": "Noida, India"
+    }
+  ]
+}
