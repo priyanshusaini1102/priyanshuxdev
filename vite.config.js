@@ -1,3 +1,5 @@
+import { resolve } from "node:path"
+import { pathToFileURL } from "node:url"
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import { site } from "./src/content.js"
@@ -43,7 +45,7 @@ function seoFromContent() {
       this.emitFile({
         type: "asset",
         fileName: "robots.txt",
-        source: `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`,
+        source: `User-agent: *\nAllow: /\nDisallow: /admin\n\nSitemap: ${site.url}/sitemap.xml\n`,
       })
       this.emitFile({
         type: "asset",
@@ -54,6 +56,69 @@ function seoFromContent() {
   }
 }
 
+function readBody(req) {
+  return new Promise((resolveBody, reject) => {
+    const chunks = []
+    req.on("data", (chunk) => chunks.push(chunk))
+    req.on("end", () => resolveBody(Buffer.concat(chunks).toString("utf8")))
+    req.on("error", reject)
+  })
+}
+
+function adminApiDev() {
+  const routes = {
+    "/api/login": "login.js",
+    "/api/logout": "logout.js",
+    "/api/session": "session.js",
+    "/api/resume": "resume.js",
+  }
+  return {
+    name: "admin-api-dev",
+    apply: "serve",
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        const path = req.url?.split("?")[0]
+        const file = routes[path]
+        if (!file) return next()
+        try {
+          const raw = await readBody(req)
+          if (raw) {
+            try {
+              req.body = JSON.parse(raw)
+            } catch {
+              req.invalidJson = true
+            }
+          }
+          res.status = (code) => {
+            res.statusCode = code
+            return res
+          }
+          res.json = (data) => {
+            if (!res.getHeader("Content-Type")) res.setHeader("Content-Type", "application/json; charset=utf-8")
+            res.end(JSON.stringify(data))
+          }
+          const href = pathToFileURL(resolve(process.cwd(), "api", file)).href
+          const mod = await import(href)
+          await mod.default(req, res)
+          if (!res.writableEnded) res.end()
+        } catch (error) {
+          server.config.logger.error(error)
+          if (!res.headersSent) {
+            res.statusCode = 500
+            res.setHeader("Content-Type", "application/json; charset=utf-8")
+            res.end(JSON.stringify({ error: "Server error." }))
+          }
+        }
+      })
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), seoFromContent()],
+  plugins: [react(), seoFromContent(), adminApiDev()],
+  test: {
+    environment: "node",
+    testTimeout: 30000,
+    fileParallelism: false,
+  },
 })
